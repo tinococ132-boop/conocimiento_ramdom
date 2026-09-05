@@ -1,0 +1,93 @@
+
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>conociento ramdom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="inicio">
+        <h1>conociento ramdom</h1>
+        <p>Un espacio para aprender sin distracciones.</p>
+        <button id="boton-usuario" class="boton-usuario" type="button">mi usuario</button>
+    </main>
+
+    <section id="panel-usuario" class="panel-usuario" aria-labelledby="titulo-usuario" hidden>
+        <div class="contenido-usuario">
+            <button id="cerrar-usuario" class="cerrar-usuario" type="button" aria-label="Cerrar panel de usuario">&times;</button>
+            <h2 id="titulo-usuario">crea tu perfil</h2>
+            <p id="mensaje-usuario">Guarda tu nombre para personalizar tu experiencia.</p>
+            <form id="formulario-usuario">
+                <label for="nombre-usuario">nombre</label>
+                <input id="nombre-usuario" name="nombre" type="text" required autocomplete="name">
+                <label for="correo-usuario">correo</label>
+                <input id="correo-usuario" name="correo" type="email" required autocomplete="email">
+                <label for="contrasena-usuario">contraseña</label>
+                <input id="contrasena-usuario" name="contrasena" type="password" required minlength="4" autocomplete="new-password">
+                <button class="boton-guardar" type="submit">guardar perfil</button>
+            </form>
+            <button id="cerrar-sesion" class="boton-salir" type="button" hidden>cerrar sesion</button>
+        </div>
+    </section>
+
+    <section id="categorias" class="categorias" aria-labelledby="titulo-categorias">
+        <h2 id="titulo-categorias">elige una categoria</h2>
+        <div class="opciones">
+            <button class="boton-categoria" data-destino="ciencia" type="button">ciencia</button>
+            <button class="boton-categoria" data-destino="historia" type="button">historia</button>
+            <button class="boton-categoria" data-destino="tecnologia" type="button">tecnologia</button>
+        </div>
+        <a class="boton-sugerencias" href="https://mail.google.com/mail/?view=cm&fs=1&to=tinococ132@gmail.com&su=Sugerencia%20para%20la%20proxima%20actualizacion&body=Escribe%20aqui%20tu%20sugerencia%3A" target="_blank" rel="noopener noreferrer">sugerencias constructivas</a>
+    </section>
+
+    <main class="informacion">
+        <section id="ciencia" class="seccion-info" aria-labelledby="titulo-ciencia">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-ciencia">ciencia</h2>
+            <label class="buscador">
+                <span aria-hidden="true">&#128269;</span>
+                <input class="campo-busqueda" type="search" placeholder="buscar en ciencia" aria-label="Buscar en ciencia">
+            </label>
+            <div class="resultados">
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/sistema-solar/" target="_blank" rel="noopener noreferrer">el sistema solar</a><p>El Sol es una estrella y los planetas giran a su alrededor.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/fotosintesis/" target="_blank" rel="noopener noreferrer">la fotosintesis</a><p>Las plantas transforman la luz en energia para crecer.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.significados.com/cuerpo-humano/" target="_blank" rel="noopener noreferrer">el cuerpo humano</a><p>El corazon bombea sangre para llevar oxigeno a todo el cuerpo.</p></article>
+            </div>
+        </section>
+
+        <section id="historia" class="seccion-info" aria-labelledby="titulo-historia">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-historia">historia</h2>
+            <label class="buscador">
+                <span aria-hidden="true">&#128269;</span>
+                <input class="campo-busqueda" type="search" placeholder="buscar en historia" aria-label="Buscar en historia">
+            </label>
+            <div class="resultados">
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://redhistoria.com/antiguo-egipto/" target="_blank" rel="noopener noreferrer">el antiguo egipto</a><p>Una civilizacion conocida por sus piramides y sus faraones.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/edad-media/" target="_blank" rel="noopener noreferrer">la edad media</a><p>Periodo de castillos, reinos y grandes cambios culturales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/imprenta/" target="_blank" rel="noopener noreferrer">la imprenta</a><p>La imprenta facilito la divulgacion de libros y conocimientos.</p></article>
+            </div>
+        </section>
+
+        <section id="tecnologia" class="seccion-info" aria-labelledby="titulo-tecnologia">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-tecnologia">tecnologia</h2>
+            <label class="buscador">
+                <span aria-hidden="true">&#128269;</span>
+                <input class="campo-busqueda" type="search" placeholder="buscar en tecnologia" aria-label="Buscar en tecnologia">
+            </label>
+            <div class="resultados">
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/internet/" target="_blank" rel="noopener noreferrer">internet</a><p>Red mundial que permite conectar dispositivos e intercambiar informacion.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/programacion/" target="_blank" rel="noopener noreferrer">programacion</a><p>Proceso de crear instrucciones para que un ordenador realice tareas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://humanidades.com/inteligencia-artificial/" target="_blank" rel="noopener noreferrer">inteligencia artificial</a><p>Conjunto de tecnicas que permiten a las maquinas aprender de datos.</p></article>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
