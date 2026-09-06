@@ -177,6 +177,19 @@ h2 {
 	gap: 1rem;
 }
 
+.aviso-etica {
+	max-width: 42rem;
+	margin-top: 0.25rem;
+	padding: 0.9rem 1.2rem;
+	border: 2px solid rgba(248, 249, 250, 0.75);
+	border-radius: 0.75rem;
+	background-color: rgba(15, 23, 42, 0.18);
+	color: #f8f9fA;
+	font-size: 0.95rem;
+	line-height: 1.5;
+	text-align: center;
+}
+
 .boton-sugerencias {
 	display: inline-block;
 	margin-top: 0.5rem;
@@ -196,6 +209,11 @@ h2 {
 	background-color: #e2e8f0;
 	transform: translateY(-3px);
 	box-shadow: 0 0 1rem rgba(248, 249, 250, 0.55);
+}
+
+body.seccion-activa .inicio,
+body.seccion-activa .categorias {
+	display: none;
 }
 
 .informacion {
@@ -317,6 +335,17 @@ h2 {
 	margin-bottom: 0.5rem;
 }
 
+.bibliografia {
+	margin-top: 0.75rem;
+	padding-top: 0.6rem;
+	border-top: 1px solid rgba(37, 99, 235, 0.2);
+	color: #475569;
+	font-size: 0.78rem;
+	font-weight: 700;
+	line-height: 1.4;
+	letter-spacing: 0.02em;
+}
+
 .boton-enlace {
 	display: inline-block;
 	margin-bottom: 0.75rem;
@@ -334,4 +363,17 @@ h2 {
 .boton-enlace:hover {
 	transform: translateY(-3px);
 	box-shadow: 0 0 1rem rgba(248, 249, 250, 0.55);
+}
+
+.aviso-final {
+	max-width: 52rem;
+	margin: 0;
+	padding: 0.85rem 1rem;
+	border: 2px solid rgba(248, 249, 250, 0.6);
+	border-radius: 0.75rem;
+	background-color: rgba(15, 23, 42, 0.15);
+	color: #f8f9fA;
+	font-size: 0.9rem;
+	line-height: 1.5;
+	text-align: center;
 }

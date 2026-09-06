@@ -9,12 +9,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Pantalla inicial de la app -->
     <main class="inicio">
         <h1>conociento ramdom</h1>
         <p>Un espacio para aprender sin distracciones.</p>
         <button id="boton-usuario" class="boton-usuario" type="button">mi usuario</button>
     </main>
 
+    <!-- Panel para crear o guardar el perfil del usuario -->
     <section id="panel-usuario" class="panel-usuario" aria-labelledby="titulo-usuario" hidden>
         <div class="contenido-usuario">
             <button id="cerrar-usuario" class="cerrar-usuario" type="button" aria-label="Cerrar panel de usuario">&times;</button>
@@ -33,17 +35,24 @@
         </div>
     </section>
 
+    <!-- Sección de categorías para elegir el tema -->
     <section id="categorias" class="categorias" aria-labelledby="titulo-categorias">
         <h2 id="titulo-categorias">elige una categoria</h2>
         <div class="opciones">
             <button class="boton-categoria" data-destino="ciencia" type="button">ciencia</button>
             <button class="boton-categoria" data-destino="historia" type="button">historia</button>
             <button class="boton-categoria" data-destino="tecnologia" type="button">tecnologia</button>
+            <button class="boton-categoria" data-destino="etica" type="button">etica</button>
+        </div>
+        <div class="aviso-etica" role="note" aria-label="Aviso importante sobre contenido informativo">
+            <strong>Nota importante:</strong> la información de cada tema se usa como referencia de aprendizaje y no es contenido original de esta página. La intención es compartir conocimientos de forma didáctica y responsable.
         </div>
         <a class="boton-sugerencias" href="https://mail.google.com/mail/?view=cm&fs=1&to=tinococ132@gmail.com&su=Sugerencia%20para%20la%20proxima%20actualizacion&body=Escribe%20aqui%20tu%20sugerencia%3A" target="_blank" rel="noopener noreferrer">sugerencias constructivas</a>
     </section>
 
+    <!-- Aquí van todas las secciones de contenido por categoría -->
     <main class="informacion">
+        <!-- Sección de ciencia -->
         <section id="ciencia" class="seccion-info" aria-labelledby="titulo-ciencia">
             <button class="volver" type="button">volver a categorias</button>
             <h2 id="titulo-ciencia">ciencia</h2>
@@ -52,12 +61,24 @@
                 <input class="campo-busqueda" type="search" placeholder="buscar en ciencia" aria-label="Buscar en ciencia">
             </label>
             <div class="resultados">
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/sistema-solar/" target="_blank" rel="noopener noreferrer">el sistema solar</a><p>El Sol es una estrella y los planetas giran a su alrededor.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/fotosintesis/" target="_blank" rel="noopener noreferrer">la fotosintesis</a><p>Las plantas transforman la luz en energia para crecer.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.significados.com/cuerpo-humano/" target="_blank" rel="noopener noreferrer">el cuerpo humano</a><p>El corazon bombea sangre para llevar oxigeno a todo el cuerpo.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://spaceplace.nasa.gov/solar-system/sp/?utm_source" target="_blank" rel="noopener noreferrer">☀️ el sistema solar</a><p>El Sol es una estrella y los planetas giran a su alrededor.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://education.nationalgeographic.org/resource/photosynthesis/" target="_blank" rel="noopener noreferrer">🌿 la fotosintesis</a><p>Las plantas transforman la luz en energia para crecer.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://medlineplus.gov/spanish/ency/article/001000.htm" target="_blank" rel="noopener noreferrer">🫀 el cuerpo humano</a><p>El corazon bombea sangre para llevar oxigeno a todo el cuerpo.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://science.nasa.gov/universe/black-holes/?utm_source" target="_blank" rel="noopener noreferrer">🌌 el universo y el big bang</a><p>El universo inicio con una expansion masiva y continua evolucionando.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://spaceplace.nasa.gov/sp/menu/solar-system/?utm_source" target="_blank" rel="noopener noreferrer">☀️ sistema solar y planetas</a><p>El Sol y los planetas forman un sistema con movimientos y caracteristicas distintas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.nationalgeographic.com/science/article/evolution" target="_blank" rel="noopener noreferrer">🧬 evolucion y seleccion natural</a><p>Las especies cambian con el tiempo y se adaptan al entorno.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://medlineplus.gov/spanish/genetica/entender/?utm_source" target="_blank" rel="noopener noreferrer">🧪 genetica y adn</a><p>El ADN guarda la informacion que define las caracteristicas de los seres vivos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://medlineplus.gov/spanish/brainandnerves.html?utm_source" target="_blank" rel="noopener noreferrer">🧠 el cerebro humano</a><p>Es el organo principal del sistema nervioso y controla pensamientos y acciones.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.nationalgeographic.com/science/article/cells" target="_blank" rel="noopener noreferrer">🔬 celula y microorganismos</a><p>La celula es la unidad basica de la vida y los microorganismos cumplen funciones clave.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://climate.nasa.gov/?utm_source" target="_blank" rel="noopener noreferrer">🌍 cambio climatico</a><p>El calentamiento global afecta el clima, los ecosistemas y la vida en la Tierra.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.energy.gov/eere/renewable-energy?utm_source" target="_blank" rel="noopener noreferrer">⚡ energias renovables</a><p>Fuentes como el sol, el viento y el agua ayudan a producir energia limpia.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/quantum-computing?utm_source" target="_blank" rel="noopener noreferrer">⚛️ fisica cuantica</a><p>Estudia el comportamiento de la materia y la energia a escala muy pequena.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://science.nasa.gov/learners/for-kids-and-students/what-is-relativity/?utm_source" target="_blank" rel="noopener noreferrer">🧲 teoria de la relatividad</a><p>La gravedad y el tiempo se comprenden de manera distinta a gran escala y velocidad.</p></article>
             </div>
+            <p class="aviso-final">Aviso: los temas y los enlaces de esta sección son referencias informativas de aprendizaje y no son contenido original de esta web. Se usan con fines educativos y de divulgación.</p>
         </section>
 
+        <!-- Sección de historia -->
         <section id="historia" class="seccion-info" aria-labelledby="titulo-historia">
             <button class="volver" type="button">volver a categorias</button>
             <h2 id="titulo-historia">historia</h2>
@@ -66,12 +87,24 @@
                 <input class="campo-busqueda" type="search" placeholder="buscar en historia" aria-label="Buscar en historia">
             </label>
             <div class="resultados">
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://redhistoria.com/antiguo-egipto/" target="_blank" rel="noopener noreferrer">el antiguo egipto</a><p>Una civilizacion conocida por sus piramides y sus faraones.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/edad-media/" target="_blank" rel="noopener noreferrer">la edad media</a><p>Periodo de castillos, reinos y grandes cambios culturales.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/imprenta/" target="_blank" rel="noopener noreferrer">la imprenta</a><p>La imprenta facilito la divulgacion de libros y conocimientos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/place/ancient-Egypt" target="_blank" rel="noopener noreferrer">🏺 el antiguo egipto</a><p>Una civilizacion conocida por sus piramides y sus faraones.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/event/Middle-Ages" target="_blank" rel="noopener noreferrer">🏰 la edad media</a><p>Periodo de castillos, reinos y grandes cambios culturales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/topic/printing-press" target="_blank" rel="noopener noreferrer">🖨️ la imprenta</a><p>La imprenta facilito la divulgacion de libros y conocimientos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/topic/prehistory" target="_blank" rel="noopener noreferrer">🦴 prehistoria</a><p>Periodo anterior a la escritura con comunidades humanas nómadas y herramientas primitivas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.historiacultural.com/2019/01/revolucion-mexicana.html" target="_blank" rel="noopener noreferrer">🇲🇽 revolucion mexicana</a><p>Movimiento social y político que transformó la historia de México en el siglo XX.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/place/ancient-Greece" target="_blank" rel="noopener noreferrer">🏛️ grecia antigua</a><p>Influyó profundamente en la filosofía, la política y el arte de Occidente.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/place/Roman-Empire" target="_blank" rel="noopener noreferrer">🏛️ imperio romano</a><p>Un vasto imperio que expandió su cultura, leyes y conquistas por Europa.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/event/Middle-Ages" target="_blank" rel="noopener noreferrer">🏰 edad media</a><p>Periodo de reinos, castillos, feudalismo y grandes trasformaciones sociales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/art/Renaissance" target="_blank" rel="noopener noreferrer">🎨 renacimiento</a><p>Movimiento cultural que valoró el arte, la ciencia y el humanismo.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/event/Industrial-Revolution" target="_blank" rel="noopener noreferrer">🏭 revolucion industrial</a><p>Transformó la producción con maquinas, fábricas y nuevos medios de transporte.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/event/World-War-I" target="_blank" rel="noopener noreferrer">⚔️ primera guerra mundial</a><p>Conflicto global que cambió fronteras, políticas y la historia del siglo XX.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/event/World-War-II" target="_blank" rel="noopener noreferrer">🔥 segunda guerra mundial</a><p>Gran guerra mundial con consecuencias enormes para la humanidad y Europa.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/place/Mexico/History" target="_blank" rel="noopener noreferrer">🇲🇽 historia de mexico</a><p>Recorre la formación, las civilizaciones y los cambios del país mexicano.</p></article>
             </div>
+            <p class="aviso-final">Aviso: los temas y los enlaces de esta sección son referencias informativas de aprendizaje y no son contenido original de esta web. Se usan con fines educativos y de divulgación.</p>
         </section>
 
+        <!-- Sección de tecnología -->
         <section id="tecnologia" class="seccion-info" aria-labelledby="titulo-tecnologia">
             <button class="volver" type="button">volver a categorias</button>
             <h2 id="titulo-tecnologia">tecnologia</h2>
@@ -80,10 +113,41 @@
                 <input class="campo-busqueda" type="search" placeholder="buscar en tecnologia" aria-label="Buscar en tecnologia">
             </label>
             <div class="resultados">
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/internet/" target="_blank" rel="noopener noreferrer">internet</a><p>Red mundial que permite conectar dispositivos e intercambiar informacion.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://concepto.de/programacion/" target="_blank" rel="noopener noreferrer">programacion</a><p>Proceso de crear instrucciones para que un ordenador realice tareas.</p></article>
-                <article class="tarjeta-info"><a class="boton-enlace" href="https://humanidades.com/inteligencia-artificial/" target="_blank" rel="noopener noreferrer">inteligencia artificial</a><p>Conjunto de tecnicas que permiten a las maquinas aprender de datos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://developer.mozilla.org/es/docs/Learn_web_development/Howto/Web_mechanics/How_does_the_Internet_work?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🌐 internet</a><p>Red mundial que permite conectar dispositivos e intercambiar informacion.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://developer.mozilla.org/es/docs/Learn_web_development?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">💻 programacion</a><p>Proceso de crear instrucciones para que un ordenador realice tareas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/artificial-intelligence?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🤖 inteligencia artificial</a><p>Conjunto de tecnicas que permiten a las maquinas aprender de datos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/cybersecurity?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🔐 ciberseguridad</a><p>Protege datos, redes y sistemas frente a ataques y amenazas digitales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.nasa.gov/learning-resources/for-kids-and-students/what-is-robotics-grades-5-8/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🤖 robotica</a><p>Diseña y construye maquinas capaces de realizar tareas autonomas o asistidas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/quantum-computing?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">⚛️ computacion cuantica</a><p>Explora computadoras que usan principios cuánticos para resolver problemas complejos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/blockchain?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">⛓️ blockchain y criptomonedas</a><p>Registra transacciones en redes distribuidas y permite activos digitales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/virtual-reality?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🕶️ realidad virtual y aumentada</a><p>Crean experiencias inmersivas digitales que combinan mundo real y virtual.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.ibm.com/mx-es/think/topics/database?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">🗃️ bases de datos</a><p>Almacenan, organizan y consultan grandes cantidades de informacion.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.computerhistory.org/timeline/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer">💻 historia de las computadoras</a><p>Recorre el desarrollo de las maquinas desde sus origenes hasta la actualidad.</p></article>
             </div>
+            <p class="aviso-final">Aviso: los temas y los enlaces de esta sección son referencias informativas de aprendizaje y no son contenido original de esta web. Se usan con fines educativos y de divulgación.</p>
+        </section>
+
+        <!-- Sección de ética -->
+        <section id="etica" class="seccion-info" aria-labelledby="titulo-etica">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-etica">etica</h2>
+            <label class="buscador">
+                <span aria-hidden="true">&#128269;</span>
+                <input class="campo-busqueda" type="search" placeholder="buscar en etica" aria-label="Buscar en etica">
+            </label>
+            <div class="resultados">
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/topic/ethics-philosophy" target="_blank" rel="noopener noreferrer">🤝 ¿qué es la ética?</a><p>Explora la diferencia entre ética y moral con ejemplos de la vida cotidiana.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.unesco.org/en/ethics-science-technology" target="_blank" rel="noopener noreferrer">💡 valores humanos</a><p>Respeto, honestidad, responsabilidad, solidaridad, justicia y otros principios esenciales.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.verywellmind.com/decision-making-2795480" target="_blank" rel="noopener noreferrer">🧭 toma de decisiones</a><p>Aprende a analizar una situación, valorar consecuencias y decidir con criterio.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.unicef.org/parenting/discipline/empathy" target="_blank" rel="noopener noreferrer">🤝 respeto y convivencia</a><p>Mejora la tolerancia, la empatía, el diálogo y la resolución de conflictos.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.un.org/es/global-issues/human-rights" target="_blank" rel="noopener noreferrer">⚖️ derechos humanos</a><p>Conoce qué son, por qué existen y cómo protegen la dignidad de las personas.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.un.org/sustainabledevelopment/sustainable-development-goals/" target="_blank" rel="noopener noreferrer">🌍 responsabilidad individual y social</a><p>Entiende la responsabilidad con las personas, la comunidad y el entorno.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.internetsegura.net/" target="_blank" rel="noopener noreferrer">📱 ética en internet y redes sociales</a><p>Reflexiona sobre privacidad, respeto, información falsa, huella digital y buen comportamiento.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.unicef.org/es/end-violence/how-prevent-cyberbullying" target="_blank" rel="noopener noreferrer">🛑 ciberacoso y convivencia digital</a><p>Identifica el acoso en línea y descubre cómo actuar con responsabilidad.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.acm.org/code-of-ethics" target="_blank" rel="noopener noreferrer">💼 ética profesional</a><p>Explora la honestidad, la responsabilidad y la conducta correcta en el trabajo.</p></article>
+                <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/topic/ethics-philosophy" target="_blank" rel="noopener noreferrer">🧠 dilemas éticos</a><p>Analiza situaciones difíciles donde hay que elegir entre valores y consecuencias.</p></article>
+            </div>
+            <p class="aviso-final">Aviso: los temas y los enlaces de esta sección son referencias informativas de aprendizaje y no son contenido original de esta web. Se usan con fines educativos y de divulgación.</p>
         </section>
     </main>
 
