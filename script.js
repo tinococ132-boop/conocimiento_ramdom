@@ -13,6 +13,27 @@ const selectorVideos = document.querySelector('#selector-videos');
 const contenedorVideos = document.querySelector('#audiovisuales .resultados');
 const urlsVideosGuardados = new Map();
 
+const configurarEstadoVideos = (contenedor = document) => {
+	contenedor.querySelectorAll('.tarjeta-video video').forEach((video) => {
+		if (video.dataset.estadoConfigurado) {
+			return;
+		}
+
+		video.dataset.estadoConfigurado = 'true';
+		const estado = video.closest('.tarjeta-video').querySelector('.estado-video');
+		if (!estado) {
+			return;
+		}
+
+		video.addEventListener('loadedmetadata', () => {
+			estado.textContent = 'Video listo para reproducirse.';
+		});
+		video.addEventListener('error', () => {
+			estado.textContent = 'El navegador no pudo reproducir este archivo. Usa "abrir video" o conviertelo a MP4 H.264.';
+		});
+	});
+};
+
 // Lee si ya existe un usuario guardado en el navegador
 const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioConocimiento') || 'null');
 
@@ -124,7 +145,9 @@ const crearTarjetaVideoGuardado = (videoGuardado) => {
 
 	tarjeta.innerHTML = `
 		<h3>${nombreSeguro}</h3>
-		<video controls preload="metadata" src="${url}">Tu navegador no puede reproducir este video.</video>
+		<video controls playsinline preload="metadata" src="${url}">Tu navegador no puede reproducir este video.</video>
+		<p class="estado-video" aria-live="polite"></p>
+		<a class="boton-enlace" href="${url}" target="_blank" rel="noopener">abrir video</a>
 		<a class="boton-enlace boton-descarga" href="${url}" download="${nombreSeguro}">descargar video</a>
 		<button class="boton-eliminar-video" type="button">eliminar video</button>
 		<p class="bibliografia">Bibliografía: Contenido propio de esta pagina</p>
@@ -135,6 +158,7 @@ const crearTarjetaVideoGuardado = (videoGuardado) => {
 		urlsVideosGuardados.delete(videoGuardado.id);
 		tarjeta.remove();
 	});
+	configurarEstadoVideos(tarjeta);
 	return tarjeta;
 };
 
@@ -167,6 +191,7 @@ const actualizarUsuario = (usuario) => {
 
 actualizarUsuario(usuarioGuardado);
 agregarBibliografias();
+configurarEstadoVideos();
 mostrarVideosGuardados();
 
 selectorVideos.addEventListener('change', async () => {

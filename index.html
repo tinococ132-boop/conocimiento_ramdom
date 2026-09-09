@@ -153,9 +153,14 @@
         </section>
 
         <!-- Sección de audiovisuales -->
-        <section id="audiovisuales" class="seccion-info" aria-labelledby="titulo-audiovisuales">
+        <section id="audiovisuales" class="seccion-info seccion-bloqueada" aria-labelledby="titulo-audiovisuales">
             <button class="volver" type="button">volver a categorias</button>
             <h2 id="titulo-audiovisuales">audiovisuales</h2>
+            <div class="mensaje-proximamente" role="status">
+                <span class="candado-proximamente" aria-hidden="true">🔒</span>
+                <h3>proximamente</h3>
+                <p>Esta seccion estara disponible muy pronto.</p>
+            </div>
             <label class="buscador">
                 <span aria-hidden="true">&#128269;</span>
                 <input class="campo-busqueda" type="search" placeholder="buscar en audiovisuales" aria-label="Buscar en audiovisuales">
@@ -168,35 +173,43 @@
             <div class="resultados">
                 <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
                     <h3>el eco en el bolsillo</h3>
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" type="video/mp4">
                         Tu navegador no puede reproducir este video.
                     </video>
-                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" download>descargar video</a>
+                    <p class="estado-video" aria-live="polite"></p>
+                    <a class="boton-enlace" href="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" target="_blank" rel="noopener">abrir video</a>
+                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" download="el-eco-en-el-bolsillo.mp4">descargar video</a>
                 </article>
                 <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
                     <h3>el plano y el constructor (ADN y ARN)</h3>
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" type="video/mp4">
                         Tu navegador no puede reproducir este video.
                     </video>
-                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" download>descargar video</a>
+                    <p class="estado-video" aria-live="polite"></p>
+                    <a class="boton-enlace" href="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" target="_blank" rel="noopener">abrir video</a>
+                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" download="el-plano-y-el-constructor.mp4">descargar video</a>
                 </article>
                 <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
                     <h3>antiguo egipto</h3>
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="antiguo%20egipto.mp4" type="video/mp4">
                         Tu navegador no puede reproducir este video.
                     </video>
-                    <a class="boton-enlace boton-descarga" href="antiguo%20egipto.mp4" download>descargar video</a>
+                    <p class="estado-video" aria-live="polite"></p>
+                    <a class="boton-enlace" href="antiguo%20egipto.mp4" target="_blank" rel="noopener">abrir video</a>
+                    <a class="boton-enlace boton-descarga" href="antiguo%20egipto.mp4" download="antiguo-egipto.mp4">descargar video</a>
                 </article>
                 <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
                     <h3>historia del universo</h3>
-                    <video controls preload="metadata">
+                    <video controls playsinline preload="metadata">
                         <source src="historia%20del%20universo.mp4" type="video/mp4">
                         Tu navegador no puede reproducir este video.
                     </video>
-                    <a class="boton-enlace boton-descarga" href="historia%20del%20universo.mp4" download>descargar video</a>
+                    <p class="estado-video" aria-live="polite"></p>
+                    <a class="boton-enlace" href="historia%20del%20universo.mp4" target="_blank" rel="noopener">abrir video</a>
+                    <a class="boton-enlace boton-descarga" href="historia%20del%20universo.mp4" download="historia-del-universo.mp4">descargar video</a>
                 </article>
             </div>
             <p class="aviso-final">Estos videos estan guardados en el proyecto y pueden reproducirse y descargarse sin internet.</p>

@@ -377,6 +377,14 @@ body.seccion-activa .categorias {
 	background-color: #0f172a;
 }
 
+.estado-video {
+	min-height: 1.25rem;
+	margin: 0 0 0.75rem;
+	color: #475569;
+	font-size: 0.8rem;
+	line-height: 1.4;
+}
+
 .boton-descarga {
 	margin-bottom: 0;
 }
@@ -431,6 +439,42 @@ body.seccion-activa .categorias {
 	font-size: 0.9rem;
 	line-height: 1.5;
 	text-align: center;
+}
+
+.seccion-bloqueada .buscador,
+.seccion-bloqueada .cargador-videos,
+.seccion-bloqueada .resultados,
+.seccion-bloqueada .aviso-final {
+	display: none;
+}
+
+.mensaje-proximamente {
+	width: min(100%, 30rem);
+	box-sizing: border-box;
+	padding: 2rem 1.5rem;
+	border: 3px solid #fbbf24;
+	border-radius: 0.75rem;
+	background-color: rgba(15, 23, 42, 0.25);
+	text-align: center;
+}
+
+.candado-proximamente {
+	display: block;
+	margin-bottom: 0.75rem;
+	font-size: 2rem;
+}
+
+.mensaje-proximamente h3,
+.mensaje-proximamente p {
+	margin: 0;
+}
+
+.mensaje-proximamente h3 {
+	font-size: 1.8rem;
+}
+
+.mensaje-proximamente p {
+	margin-top: 0.5rem;
 }
 
 .descripcion-calculadora {
