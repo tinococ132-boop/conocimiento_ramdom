@@ -43,6 +43,8 @@
             <button class="boton-categoria" data-destino="historia" type="button">historia</button>
             <button class="boton-categoria" data-destino="tecnologia" type="button">tecnologia</button>
             <button class="boton-categoria" data-destino="etica" type="button">etica</button>
+            <button class="boton-categoria" data-destino="audiovisuales" type="button">audiovisuales</button>
+            <button class="boton-categoria" data-destino="test-conocimiento" type="button">test del conocimiento</button>
         </div>
         <div class="aviso-etica" role="note" aria-label="Aviso importante sobre contenido informativo">
             <strong>Nota importante:</strong> la información de cada tema se usa como referencia de aprendizaje y no es contenido original de esta página. La intención es compartir conocimientos de forma didáctica y responsable.
@@ -148,6 +150,109 @@
                 <article class="tarjeta-info"><a class="boton-enlace" href="https://www.britannica.com/topic/ethics-philosophy" target="_blank" rel="noopener noreferrer">🧠 dilemas éticos</a><p>Analiza situaciones difíciles donde hay que elegir entre valores y consecuencias.</p></article>
             </div>
             <p class="aviso-final">Aviso: los temas y los enlaces de esta sección son referencias informativas de aprendizaje y no son contenido original de esta web. Se usan con fines educativos y de divulgación.</p>
+        </section>
+
+        <!-- Sección de audiovisuales -->
+        <section id="audiovisuales" class="seccion-info" aria-labelledby="titulo-audiovisuales">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-audiovisuales">audiovisuales</h2>
+            <label class="buscador">
+                <span aria-hidden="true">&#128269;</span>
+                <input class="campo-busqueda" type="search" placeholder="buscar en audiovisuales" aria-label="Buscar en audiovisuales">
+            </label>
+            <div class="resultados">
+                <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
+                    <h3>el eco en el bolsillo</h3>
+                    <video controls preload="metadata">
+                        <source src="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.30%20PM.mp4" download>descargar video</a>
+                </article>
+                <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
+                    <h3>el plano y el constructor (ADN y ARN)</h3>
+                    <video controls preload="metadata">
+                        <source src="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <a class="boton-enlace boton-descarga" href="WhatsApp%20Video%202026-09-08%20at%206.54.33%20PM.mp4" download>descargar video</a>
+                </article>
+                <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
+                    <h3>antiguo egipto</h3>
+                    <video controls preload="metadata">
+                        <source src="antiguo%20egipto.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <a class="boton-enlace boton-descarga" href="antiguo%20egipto.mp4" download>descargar video</a>
+                </article>
+                <article class="tarjeta-info tarjeta-video" data-fuente="Contenido propio de esta pagina">
+                    <h3>historia del universo</h3>
+                    <video controls preload="metadata">
+                        <source src="historia%20del%20universo.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                    <a class="boton-enlace boton-descarga" href="historia%20del%20universo.mp4" download>descargar video</a>
+                </article>
+            </div>
+            <p class="aviso-final">Estos videos estan guardados en el proyecto y pueden reproducirse y descargarse sin internet.</p>
+        </section>
+
+        <!-- Sección del test del conocimiento -->
+        <section id="test-conocimiento" class="seccion-info" aria-labelledby="titulo-test-conocimiento">
+            <button class="volver" type="button">volver a categorias</button>
+            <h2 id="titulo-test-conocimiento">test del conocimiento</h2>
+            <p class="descripcion-test">Pon a prueba lo que has aprendido y elige un nivel.</p>
+            <button id="entrar-test" class="boton-entrar" type="button">entrar</button>
+            <div id="niveles-test" class="niveles-test" hidden>
+                <button class="nivel-test" data-nivel="facil" type="button">
+                    <strong>facil</strong>
+                    <span>preguntas para comenzar</span>
+                </button>
+                <button class="nivel-test" data-nivel="medio" type="button">
+                    <strong>medio</strong>
+                    <span>un reto mayor</span>
+                </button>
+                <button class="nivel-test" data-nivel="dificil" type="button">
+                    <strong>dificil</strong>
+                    <span>demuestra todo lo que sabes</span>
+                </button>
+                <button class="nivel-test nivel-bloqueado" type="button" disabled aria-label="Nivel experto bloqueado">
+                    <strong>🔒 experto</strong>
+                    <span>completa dificil correctamente</span>
+                </button>
+                <p id="nivel-seleccionado" class="nivel-seleccionado" aria-live="polite"></p>
+            </div>
+            <div id="materias-test" class="materias-test" hidden>
+                <h3>elige una materia</h3>
+                <div class="opciones-materia">
+                    <button class="materia-test" data-materia="ciencias" type="button">ciencias</button>
+                    <button class="materia-test" data-materia="historia" type="button">historia</button>
+                    <button class="materia-test" data-materia="etica" type="button">etica</button>
+                    <button class="materia-test" data-materia="test general" type="button">test general</button>
+                </div>
+                <p id="materia-seleccionada" class="materia-seleccionada" aria-live="polite"></p>
+            </div>
+            <div id="panel-test" class="panel-test" hidden>
+                <button id="comenzar-test" type="button">comenzar test</button>
+                <div id="pregunta-test" class="pregunta-test" hidden>
+                    <p id="progreso-test" class="progreso-test"></p>
+                    <h3 id="texto-pregunta"></h3>
+                    <div id="opciones-pregunta" class="opciones-pregunta"></div>
+                </div>
+                <div id="reloj-test" class="reloj-test" aria-live="polite" hidden>
+                    <span aria-hidden="true">⏱</span>
+                    <span id="tiempo-restante">--:--</span>
+                </div>
+                <p id="estado-test" class="estado-test" aria-live="polite"></p>
+                <button id="reiniciar-test" type="button">reiniciar test</button>
+                <button id="siguiente-pregunta" type="button" hidden>siguiente pregunta</button>
+                <div id="resultado-test" class="resultado-test" hidden aria-live="polite">
+                    <h3>resultado del test</h3>
+                    <p id="porcentaje-test"></p>
+                    <p id="aciertos-test"></p>
+                    <p id="mensaje-test" class="mensaje-test"></p>
+                </div>
+            </div>
         </section>
     </main>
 
