@@ -302,6 +302,39 @@ body.seccion-activa .categorias {
 	font-size: 1.3rem;
 }
 
+.cargador-videos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.75rem;
+	width: min(100%, 54rem);
+	padding: 1rem;
+	box-sizing: border-box;
+	border: 2px dashed rgba(248, 249, 250, 0.75);
+	border-radius: 0.5rem;
+	background-color: rgba(15, 23, 42, 0.15);
+}
+
+.cargador-videos label {
+	font-weight: 700;
+}
+
+.cargador-videos input {
+	max-width: 100%;
+	padding: 0.45rem;
+	border-radius: 0.4rem;
+	background-color: #f8f9fa;
+	color: #1e293b;
+}
+
+.cargador-videos p {
+	width: 100%;
+	margin: 0;
+	font-size: 0.85rem;
+	text-align: center;
+}
+
 .campo-busqueda {
 	width: 100%;
 	border: 0;
@@ -346,6 +379,15 @@ body.seccion-activa .categorias {
 
 .boton-descarga {
 	margin-bottom: 0;
+}
+
+.boton-eliminar-video {
+	margin-top: 0.75rem;
+	padding: 0.6rem 1rem;
+	background-color: #e2e8f0;
+	color: #1e293b;
+	font-size: 0.9rem;
+	animation: none;
 }
 
 .bibliografia {

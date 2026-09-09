@@ -9,6 +9,9 @@ const cerrarUsuario = document.querySelector('#cerrar-usuario');
 const formularioUsuario = document.querySelector('#formulario-usuario');
 const cerrarSesion = document.querySelector('#cerrar-sesion');
 const mensajeUsuario = document.querySelector('#mensaje-usuario');
+const selectorVideos = document.querySelector('#selector-videos');
+const contenedorVideos = document.querySelector('#audiovisuales .resultados');
+const urlsVideosGuardados = new Map();
 
 // Lee si ya existe un usuario guardado en el navegador
 const usuarioGuardado = JSON.parse(localStorage.getItem('usuarioConocimiento') || 'null');
@@ -63,6 +66,89 @@ const agregarBibliografias = () => {
 	});
 };
 
+const abrirBaseDeVideos = () => new Promise((resolver, rechazar) => {
+	const solicitud = indexedDB.open('conocimientoRandomVideos', 1);
+	solicitud.onupgradeneeded = () => solicitud.result.createObjectStore('videos', { keyPath: 'id' });
+	solicitud.onsuccess = () => resolver(solicitud.result);
+	solicitud.onerror = () => rechazar(solicitud.error);
+});
+
+const leerVideosGuardados = async () => {
+	const baseDeDatos = await abrirBaseDeVideos();
+	return new Promise((resolver, rechazar) => {
+		const transaccion = baseDeDatos.transaction('videos', 'readonly');
+		const solicitud = transaccion.objectStore('videos').getAll();
+		solicitud.onsuccess = () => resolver(solicitud.result);
+		solicitud.onerror = () => rechazar(solicitud.error);
+	});
+};
+
+const guardarVideo = async (archivo) => {
+	const baseDeDatos = await abrirBaseDeVideos();
+	return new Promise((resolver, rechazar) => {
+		const id = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`;
+		const video = { id, nombre: archivo.name, archivo };
+		const transaccion = baseDeDatos.transaction('videos', 'readwrite');
+		transaccion.objectStore('videos').add(video);
+		transaccion.oncomplete = () => resolver(video);
+		transaccion.onerror = () => rechazar(transaccion.error);
+	});
+};
+
+const eliminarVideoGuardado = async (id) => {
+	const baseDeDatos = await abrirBaseDeVideos();
+	return new Promise((resolver, rechazar) => {
+		const transaccion = baseDeDatos.transaction('videos', 'readwrite');
+		transaccion.objectStore('videos').delete(id);
+		transaccion.oncomplete = resolver;
+		transaccion.onerror = () => rechazar(transaccion.error);
+	});
+};
+
+const escaparTextoHTML = (texto) => texto.replace(/[&<>'"]/g, (caracter) => ({
+	'&': '&amp;',
+	'<': '&lt;',
+	'>': '&gt;',
+	"'": '&#39;',
+	'"': '&quot;'
+}[caracter]));
+
+const crearTarjetaVideoGuardado = (videoGuardado) => {
+	const tarjeta = document.createElement('article');
+	tarjeta.className = 'tarjeta-info tarjeta-video video-guardado';
+	tarjeta.dataset.videoGuardado = videoGuardado.id;
+	tarjeta.dataset.fuente = 'Contenido propio de esta pagina';
+	const url = URL.createObjectURL(videoGuardado.archivo);
+	const nombreSeguro = escaparTextoHTML(videoGuardado.nombre);
+	urlsVideosGuardados.set(videoGuardado.id, url);
+
+	tarjeta.innerHTML = `
+		<h3>${nombreSeguro}</h3>
+		<video controls preload="metadata" src="${url}">Tu navegador no puede reproducir este video.</video>
+		<a class="boton-enlace boton-descarga" href="${url}" download="${nombreSeguro}">descargar video</a>
+		<button class="boton-eliminar-video" type="button">eliminar video</button>
+		<p class="bibliografia">Bibliografía: Contenido propio de esta pagina</p>
+	`;
+	tarjeta.querySelector('.boton-eliminar-video').addEventListener('click', async () => {
+		await eliminarVideoGuardado(videoGuardado.id);
+		URL.revokeObjectURL(url);
+		urlsVideosGuardados.delete(videoGuardado.id);
+		tarjeta.remove();
+	});
+	return tarjeta;
+};
+
+const mostrarVideosGuardados = async () => {
+	try {
+		const videosGuardados = await leerVideosGuardados();
+		videosGuardados.forEach((videoGuardado) => {
+			contenedorVideos.appendChild(crearTarjetaVideoGuardado(videoGuardado));
+		});
+	} catch (error) {
+		console.error('No se pudieron cargar los videos guardados.', error);
+	}
+};
+
 // Actualiza el texto del botón de usuario y el formulario
 const actualizarUsuario = (usuario) => {
 	if (usuario) {
@@ -81,6 +167,20 @@ const actualizarUsuario = (usuario) => {
 
 actualizarUsuario(usuarioGuardado);
 agregarBibliografias();
+mostrarVideosGuardados();
+
+selectorVideos.addEventListener('change', async () => {
+	const archivos = [...selectorVideos.files];
+	for (const archivo of archivos) {
+		try {
+			const videoGuardado = await guardarVideo(archivo);
+			contenedorVideos.appendChild(crearTarjetaVideoGuardado(videoGuardado));
+		} catch (error) {
+			console.error('No se pudo guardar el video.', error);
+		}
+	}
+	selectorVideos.value = '';
+});
 
 botonUsuario.addEventListener('click', () => {
 	panelUsuario.hidden = false;
