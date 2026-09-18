@@ -444,7 +444,12 @@ body.seccion-activa .categorias {
 .seccion-bloqueada .buscador,
 .seccion-bloqueada .cargador-videos,
 .seccion-bloqueada .resultados,
-.seccion-bloqueada .aviso-final {
+.seccion-bloqueada .aviso-final,
+.seccion-bloqueada .descripcion-test,
+.seccion-bloqueada .boton-entrar,
+.seccion-bloqueada .niveles-test,
+.seccion-bloqueada .materias-test,
+.seccion-bloqueada .panel-test {
 	display: none;
 }
 
